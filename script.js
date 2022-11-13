@@ -36,7 +36,7 @@ operators.forEach(function (value) {
 
 equal.addEventListener("click", function () {
     let formatedString = display.value.replace('×', '*');
-    formatedString = stringToEval.replace('÷', '/');
+    formatedString = formatedString.replace('÷', '/');
     display.value = eval(formatedString);
 });
 
