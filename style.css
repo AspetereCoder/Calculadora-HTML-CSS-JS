@@ -10,6 +10,10 @@
 
 body {
     background-color: rgb(97, 93, 93);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #buttons {
