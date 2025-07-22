@@ -1,9 +1,9 @@
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const display = document.querySelector("#display");
-const equal = document.querySelector(".operator-eq");
-const clean = document.querySelector("#clean");
-const del = document.querySelector("#del");
+const resultBtn = document.querySelector(".operator-eq");
+const clearBtn = document.querySelector("#clear");
+const deleteBtn = document.querySelector("#delete");
 
 //  adding functionality to numbers
 
@@ -32,18 +32,21 @@ operators.forEach(function (value) {
     })
 });
 
-// adding functionality to equal operator
+// OPERATORS
 
-equal.addEventListener("click", function () {
+// evaluates the display string
+resultBtn.addEventListener("click", function () {
     let formatedString = display.value.replace('×', '*');
     formatedString = formatedString.replace('÷', '/');
     display.value = eval(formatedString);
 });
 
-clean.addEventListener("click", function () {
+// clears display
+clearBtn.addEventListener("click", function () {
     display.value = "";
 });
 
-del.addEventListener("click", function () {
+// removes the last digit
+deleteBtn.addEventListener("click", function () {
     display.value = display.value.replace(display.value[display.value.length - 1], '');
 });
